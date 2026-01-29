@@ -4,8 +4,8 @@ import time
 
 #first PID parameters 
 kp = 10.0
-ki = 0.0
-kd = 0.0
+ki = 0.1
+kd = 0.05
 
 #tcp parameters
 cwnd = 1.0
@@ -21,7 +21,7 @@ rtt_values = []
 
 for t in range(100):
 
-    rtt_measured = min_rtt + cwnd * 2 + random.uniform(-5, 5)
+    rtt_measured = min_rtt + cwnd * 2 + random.uniform(1, 5)
     error = target_rtt - rtt_measured
     integral += error * dt
     derivative = (error - prev_error) / dt
