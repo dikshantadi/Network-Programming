@@ -75,7 +75,8 @@ if "%choice%"=="6" (
     set /p backup=backup folder name:
     xcopy !folder! !backup! /E /I /H /Y
     if exist !backup! (
-        echo folder backed up successfully
+        echo folder 
+        backed up successfully
     ) else (
         echo folder not backed up
     )
