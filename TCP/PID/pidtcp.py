@@ -25,6 +25,7 @@ for t in range(100):
     error = target_rtt - rtt_measured
     integral += error * dt
     derivative = (error - prev_error) / dt
+    #Implementation of the pid control formula 
     control = kp * error + ki * integral + kd * derivative
 
     cwnd += control * 0.01
